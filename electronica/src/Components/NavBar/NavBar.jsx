@@ -1,11 +1,13 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logoa from "/Users/ariel_ya5syar/Desktop/react/electronica/src/assets/logoA.png"
+import logoa from "../NavBar/logoA.png"
+import CartWidget from '../CartWidget/CartWidget';
+
 const NavBar = () => {
 return(
     
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar bg="light"  data-bs-theme="light">
         <Container>
           <Container>
           <Navbar.Brand href="#logo">
@@ -13,7 +15,7 @@ return(
             A OTRA DIMENSION
           </Navbar.Brand>
         </Container>         
-          <Nav className="navContainer">
+          <Nav >
             <Nav.Link href="#inicio">Inicio</Nav.Link>
             <Nav.Link href="#electronica">Electronica</Nav.Link>
             <Nav.Link href="#impresoras3d">Impresoras 3D</Nav.Link>
@@ -21,6 +23,7 @@ return(
             <Nav.Link href="#cnc">CNC</Nav.Link>
             <Nav.Link href="#contacto">Servicios</Nav.Link>
             <Nav.Link href="#contacto">Contacto</Nav.Link>
+            <Nav.Link href="#cartwidget"><CartWidget /></Nav.Link>
           </Nav>
         </Container>
       </Navbar>
