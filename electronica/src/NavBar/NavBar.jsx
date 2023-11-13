@@ -7,7 +7,12 @@ return(
     
     <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#logo"><img src={logoa} alt='logoA' width={128}></img>A OTRA DIMENSION</Navbar.Brand>
+          <Container>
+          <Navbar.Brand href="#logo">
+            <img  alt="" src={logoa} width="128"  />{' '}
+            A OTRA DIMENSION
+          </Navbar.Brand>
+        </Container>         
           <Nav className="navContainer">
             <Nav.Link href="#inicio">Inicio</Nav.Link>
             <Nav.Link href="#electronica">Electronica</Nav.Link>
