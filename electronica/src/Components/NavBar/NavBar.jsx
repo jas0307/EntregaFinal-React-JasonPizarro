@@ -11,7 +11,7 @@ return(
         <Container>
           <Container>
           <Navbar.Brand href="#logo">
-            <img  alt="" src={logoa} width="128"  />{' '}
+            <img  alt="logo" src={logoa} width="128"  />{' '}
             A OTRA DIMENSION
           </Navbar.Brand>
         </Container>         
