@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Impresora 3D Ender 3",
+    "marca": "Creality 3d",
+    "descripcion":"Impresora 3d Ender 3 220x220x250mm" ,
+    "image": "https://www.pcfactory.cl/public/foto/29748/2_1000.jpg?t=1629320328614",
+    "precio": 220000,
+    "stock": 10,
+    "categoria": "impresoras3d"
+  },
+  {
+    "id": 2,
+    "name": "Impresora 3d A8 V2 ",
+    "marca": "Anet",
+    "descripcion": "Impresora 3d Anet A8 V2 220x220x250mm Pantalla Touch 150mm/s",
+    "image": "https://tecnosistec.cl/4710-thickbox_default/impresora-3d-anet-a8-v2-220x220x250mm-pantalla-touch-150mms.jpg",
+    "precio": 130000,
+    "stock": 10,
+    "categoria": "impresoras3d"
+  },
+  {
+    "id": 3,
+    "name": "Cama Magnética",
+    "marca": "ARTILLERY",
+    "descripcion": "PLACA MADRE SIDEWINDER X1 GEN L V1.0 SIN DRIVER ARTILLERY | REPUESTOS 3D",
+    "image": "https://cdnx.jumpseller.com/todo-toner/image/20178312/REP415ART_PLACA_MADRE_SIDEWINDER_X1__SW-X1___GEN_L_V1_0_SIN_DRIVER.jpg?1635447446",
+    "precio": 44988,
+    "stock": 13,
+    "categoria": "electronica"
+  },
+  {
+    "id": 4,
+    "name": "Fuente de poder",
+    "marca": "Generico",
+    "descripcion": "Fuente de poder para Impresora 3D Anet ET4",
+    "image": "https://tecnosistec.cl/5160-thickbox_default/repuesto-anet-et4-adaptador-de-corriente-para-impresora-3d.jpg",
+    "precio": 19990,
+    "stock": 18,
+    "categoria": "electronica"
+  },
+  {
+    "id": 5,
+    "name": "Filamento PLA Impresora 3D",
+    "marca": "Anet",
+    "descripcion": "Filamento PLA Impresora 3D Anet 1.75mm 1KG Variedad de colores",
+    "image": "https://tecnosistec.cl/3759-thickbox_default/filamentos-en-pla-o-abs-variedad-de-colores-marca-anet-175mm-1kg-.jpg",
+    "precio": 18900,
+    "stock": 14,
+    "categoria": "impresiones"
+  },
+  {
+    "id": 6,
+    "name": "Filamento Pla",
+    "marca": "Creality 3d",
+    "descripcion": "Filamento Pla Creality CR-PLA Colores Fluor",
+    "image": "https://tecnosistec.cl/4430-thickbox_default/filamento-pla-creality-cr-pla-colores-fluo.jpg",
+    "precio": 13900,
+    "stock": 8,
+    "categoria": "impresiones"
+  },
+  {
+    "id": 7,
+    "name": "Grabadora Laser ACR CNC – Plateada ",
+    "marca": "Generico",
+    "descripcion": "Kit máquina láser de gran precisión, ideal para grabar diferentes materiales como madera, cuero, corcho, papel, balsa, entre otros.",
+    "image": "https://www.cimech3d.cl/wp-content/uploads/2020/05/DSC00166-%E7%BC%96%E8%BE%912-600x584.jpg",
+    "precio": 824490,
+    "stock": 5,
+    "categoria": "cnc"
+  },
+  {
+    "id": 8,
+    "name": "Máquina grabadora láser CO2",
+    "marca": "Cimech 3d",
+    "descripcion": "Máquina grabadora láser CO2 40W (área util 30x20cm)",
+    "image": "https://www.cimech3d.cl/wp-content/uploads/2022/10/DSC00117-%E7%BC%96%E8%BE%91-2.jpg",
+    "precio": 855000,
+    "stock": 3,
+    "categoria": "cnc"
+  }
+]
