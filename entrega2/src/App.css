@@ -78,6 +78,7 @@ align-items: baseline;}
 }
 .detailcontainer{
   display: flex;
+  
 
 }
 
@@ -154,3 +155,8 @@ align-items: baseline;}
   color:#aaa;
   margin-bottom:0;
 }
+
+.saludo{
+text-align: center;
+}
+

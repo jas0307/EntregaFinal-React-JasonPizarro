@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import productosJson from "../Json/productosJson.json"
 import ItemList from '../ItemList/ItemList';
+import Image from 'react-bootstrap/Image';
 import banner from "../ItemListContainer/banner.png"
+
+
 const ItemListContainer = ({greeting}) => {
 
   const[item,setItem] = useState([])  
@@ -29,8 +32,9 @@ useEffect(() => {
 
   return (
     <div className='container'>
-      <h1>{greeting}</h1>
-      <img src={banner} width="100%" alt="banner" />
+      <div><h1 className='saludo'>{greeting}</h1>
+      <div><Image src={banner} width="100%" alt="banner" thumbnail /></div>
+      </div>
       <ItemList  item={item} />
 
     </div>
