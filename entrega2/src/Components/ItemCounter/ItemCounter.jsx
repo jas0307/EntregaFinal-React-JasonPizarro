@@ -4,18 +4,18 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
     
 
-  const handleIncrement = () => {
+  const btnIncrementar = () => {
     if (count < stock) {
       setCount(count + 1);
     }
   };
 
-  const handleDecrement = () => {
+  const btnDecrementar = () => {
     if (count > 1) {
       setCount(count - 1);
     }
   };
-  const handleAddToCart = () => {
+  const addCarrito = () => {
     if (count > 0) {
       onAdd(count);
     }
@@ -25,10 +25,10 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
   return (
     <div>
       
-      <button onClick={handleDecrement}>-</button>
+      <button onClick={btnDecrementar}>-</button>
       <span>{count}</span>
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={handleAddToCart}>Agregar al carrito</button>
+      <button onClick={btnIncrementar}>+</button>
+      <button onClick={addCarrito }>Agregar al carrito</button>
       
       
     </div>

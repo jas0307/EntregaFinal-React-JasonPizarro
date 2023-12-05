@@ -5,21 +5,24 @@ import { useState } from 'react';
 
 const ItemDetail = ({item}) => {
   const [cartQuantity, setCartQuantity] = useState(0);
-  
+  const [maximo,setMaximo] = useState(false);
   const handleAddToCart = (quantity) => {
-    // Validar que la cantidad no supere el stock máximo
+   
     const newCartQuantity = cartQuantity + quantity;
     if (newCartQuantity <= item.stock) {
-      setCartQuantity(newCartQuantity);
-      console.log(`Agregado al carrito: ${quantity} unidades`);
+      setCartQuantity(newCartQuantity);   
+        
     } else {
-      console.log(`No se pueden agregar más unidades al carrito. Stock máximo alcanzado.`);
+      
+     setMaximo("Alcanzo maximo de productos")
+    
     }
   };
    
   const handleEmptyCart = () => {
     setCartQuantity(0);
-    console.log('Carrito vaciado');
+    setMaximo(false)
+    
   };
 
   return (
@@ -27,7 +30,6 @@ const ItemDetail = ({item}) => {
     <Card style={{ width: '38rem' }}>
     <Card.Img variant="top" src={item.image} alt={item.name}  />    
   </Card>
-
 <div className="card2" style={{ width: '38rem' }}>
 <Card.Body>
       <Card.Title>{item.name}</Card.Title>
@@ -41,6 +43,7 @@ const ItemDetail = ({item}) => {
     <div className='counter'>
     <ItemCounter className='counter' stock={item.stock} initial= {1} onAdd={handleAddToCart} />
     <p>Cantidad en carrito: {cartQuantity}</p>
+    <p>{maximo}</p>
     <button onClick={handleEmptyCart}>Vaciar Carrito</button></div>
     </div>
     
