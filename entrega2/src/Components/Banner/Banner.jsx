@@ -4,10 +4,10 @@ import banner from "../Banner/banner.png"
 
 const Banner = ({greeting}) => {
   return (
-  <div>
+  <div className="text-center">
     <div><h1 className='saludo'>{greeting}</h1>      
       </div>
-    <div><Image src={banner} width="100%" alt="banner" thumbnail /></div>
+    <div><Image src={banner}  alt="banner" thumbnail /></div>
     
 </div>
   )
