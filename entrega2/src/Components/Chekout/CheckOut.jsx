@@ -14,8 +14,7 @@ export const CheckOut = () =>{
 
      const {cart, totalPrice, removeProduct} = useCartContext();
 
-    const manejadorFormulario = (event) =>{
-  
+     const manejadorFormulario = (event) =>{
       event.preventDefault();
      
 
@@ -44,30 +43,8 @@ export const CheckOut = () =>{
       telefono,
       email,
      };
-     
-     const getStockForProduct = async (productId) => {
-        const db = getFirestore();
-        const productoRef = doc(db, 'productos', productId);
-        const productoDoc = await getDoc(productoRef);
-      
-        return productoDoc.data().stock;
-      };
-      const checkStock = async (productoOrden) => {
-        const stockActual = await getStockForProduct(productoOrden.id);
-        return stockActual >= productoOrden.cantidad;
-      };
-
-
-       Promise.all(
+     Promise.all(
       orden.items.map(async (productoOrden)=>{
-        const stockAvailable = await checkStock(productoOrden);
-
-        if (!stockAvailable) {
-          console.log('No hay suficiente stock para el producto', productoOrden.id);
-          setError('No hay suficiente stock para completar la orden');
-          throw new Error('Insufficient stock for product');
-        }
-
              const db = getFirestore();
              const productoRef = doc(db, 'productos', productoOrden.id);
 
@@ -77,10 +54,7 @@ export const CheckOut = () =>{
              await updateDoc( productoRef, {
               stock: stockActual - productoOrden.cantidad,
              });
-
-             if (stockActual < productoOrden.cantidad) {
-                setError(`No hay suficiente stock para ${productoOrden.nombre}`);
-                return;}
+           
       })
      )
      .then(()=>{
@@ -96,13 +70,10 @@ export const CheckOut = () =>{
       });
      })
      .catch((error)=>{
-      console.log('No se puede actualizar el stock', error);
-      console.log(total);
-      console.log(orden);
-      console.log(stock);
+      console.log('No se puede actualizar el stock', error);     
       setError('No se actualizo el stock');
      });    
-   
+    
      setNombre('');
      setApellido('');
      setTelefono('');
