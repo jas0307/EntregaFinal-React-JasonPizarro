@@ -13,7 +13,7 @@ export const CheckOut = () =>{
       const [mensaje, setMensaje] = useState('');
 
      const {cart, totalPrice, removeProduct} = useCartContext();
-
+  
      const manejadorFormulario = (event) =>{
       event.preventDefault();
      
@@ -51,6 +51,10 @@ export const CheckOut = () =>{
              const productoDoc = await getDoc(productoRef);
              const stockActual = productoDoc.data().stock;
 
+             if (productoOrden.cantidad <= 0 || productoOrden.cantidad > stockActual) {
+                throw new Error(`La cantidad solicitada para el producto ${productoOrden.id} no es válida o no queda stock`);
+              }
+
              await updateDoc( productoRef, {
               stock: stockActual - productoOrden.cantidad,
              });
@@ -71,7 +75,7 @@ export const CheckOut = () =>{
      })
      .catch((error)=>{
       console.log('No se puede actualizar el stock', error);     
-      setError('No se actualizo el stock');
+      setError('Porfavor revisar stock');
      });    
     
      setNombre('');
