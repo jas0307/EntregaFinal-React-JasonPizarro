@@ -19,7 +19,7 @@ const NavBar = () => {
             <div className="navbar2"> <Link  to="/">Home</Link></div>
             <div className="navbar2"> <Link  to="category/impresoras3d">Impresoras3d</Link></div>
             <div className="navbar2"> <Link  to="category/electronica">Electronica</Link></div>
-            <div className="navbar2"> <Link  to="category/impresiones">Accesorios</Link></div>
+            <div className="navbar2"> <Link  to="category/accesorios">Accesorios</Link></div>
             <div className="navbar2"> <Link  to="category/cnc">Cnc</Link></div>
             <div className="navbar2"> <Link  to="/cart"><CartWidget/></Link></div>
 

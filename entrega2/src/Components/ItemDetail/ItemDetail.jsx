@@ -1,29 +1,18 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import ItemCounter from '../ItemCounter/ItemCounter';
+import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
+import { useCartContext } from '../Context/CartContext';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({item}) => {
-  const [cartQuantity, setCartQuantity] = useState(0);
-  const [maximo,setMaximo] = useState(false);
-  const handleAddToCart = (quantity) => {
-   
-    const newCartQuantity = cartQuantity + quantity;
-    if (newCartQuantity <= item.stock) {
-      setCartQuantity(newCartQuantity);   
-        
-    } else {
-      
-     setMaximo("Alcanzo maximo de productos")
-    
-    }
-  };
-   
-  const handleEmptyCart = () => {
-    setCartQuantity(0);
-    setMaximo(false)
-    
-  };
+
+  const[goToCart, setGoToCart] = useState(false);
+  const {addProduct} = useCartContext()
+  const onAdd = (quantity) =>{
+   setGoToCart(true);
+   addProduct(item, quantity);
+  }
 
   return (
 <div className='detailcontainer'>
@@ -33,18 +22,15 @@ const ItemDetail = ({item}) => {
 <div className="card2" style={{ width: '38rem' }}>
 <Card.Body>
       <Card.Title>{item.name}</Card.Title>
-      <h4>{item.marca}</h4>
-      <Card.Text>{item.descripcion}
+      <h4>{item.brand}</h4>
+      <Card.Text>{item.description}
       </Card.Text>
-      <h2>$ {item.precio}</h2>
+      <h2>$ {item.price}</h2>
       <h3>Stock: {item.stock}</h3>
     </Card.Body>    
     </div>
-    <div className='counter'>
-    <ItemCounter className='counter' stock={item.stock} initial= {1} onAdd={handleAddToCart} />
-    <p>Cantidad en carrito: {cartQuantity}</p>
-    <p>{maximo}</p>
-    <button onClick={handleEmptyCart}>Vaciar Carrito</button></div>
+    <div className='counter'> 
+    {goToCart ? <Link to='/cart'>Terminar compra</Link> :<ItemCount stock={item.stock} initial={1} onAdd={onAdd} />}</div>
     </div>
     
   

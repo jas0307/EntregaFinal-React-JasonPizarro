@@ -7,7 +7,9 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom'
 import Error from './Components/Error'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
 import Banner from './Components/Banner/Banner'
-
+import CartProvider from './Components/Context/CartContext'
+import { CheckOut } from './Components/Chekout/CheckOut'
+import Cart from './Components/Cart/Cart'
 
 function App() {
  
@@ -15,6 +17,7 @@ function App() {
   return (
     <div className='App'>
     <BrowserRouter>
+    <CartProvider>
      <NavBar />
 
      <Routes>
@@ -27,10 +30,11 @@ function App() {
   }/>
     <Route path={"/category/:id"} element={<ItemListContainer/>} />
     <Route path={"/item/:id"} element={<ItemDetailContainer/>}/>
-    <Route path={"/cart"} element={<CartWidget/>}/>
+    <Route path={"/cart"} element={<Cart/>}/>
+    <Route path={"/checkout"} element={<CheckOut/>} />
     <Route path={"*"} element={<Error/>}/>
     </Routes>
-      
+    </CartProvider>
      </BrowserRouter>
     </div>
   )
