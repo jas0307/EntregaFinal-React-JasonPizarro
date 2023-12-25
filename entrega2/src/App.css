@@ -1,10 +1,13 @@
+
+
 .navbar2 {
+  
   background-color: #f8f9fa;
   overflow: hidden;
   font-family: 'Arial', sans-serif;
-  font-size: 20px;  
+  font-size: 16px;  
   color: #000000;  
-  padding: 14px 16px; 
+  padding: 3px 3px; 
   margin-right: 5px; 
   cursor: pointer;
 }
@@ -12,9 +15,9 @@
 .navbar2 a {
   
   display: block;
-  color: rgb(104, 103, 103);
+  color: rgb(2, 2, 2);
   text-align: center;
-  padding: 14px 16px;
+  padding: 3px 3px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -26,21 +29,6 @@
 }
 
 .navbar2 a.active {
-  
-  color: burlywood;
-}
-
-.navbar-brand {
-  
-  display: flex;
-  color: #000000;
-  align-items: center;
-  
-  padding: 10px ;
-  text-decoration: none;
-}
-
-.navbar-brand:hover {
   
   color: burlywood;
 }
@@ -64,6 +52,7 @@ align-items: baseline;}
   border: 1px solid #ddd; 
   background-color: #ffffff;
   min-height: 600px;
+  max-width: 550px;
 }
 .card2 {
   display: flex;
@@ -84,21 +73,19 @@ align-items: baseline;}
 
 .counter{
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   padding: 20px;
   margin-top: 20px;
   margin-left: 2px;
-  margin-bottom: 20px;  
+  margin-bottom: 20px;
   background-color: #ffffff;
+  align-items: baseline;
   
-
 }
+  
 
 .footer-basic {
   padding:40px 0;
-  background-color:#ffffff;
+  background-color:#f8f9fa;
   color:#4b4c4d;
 }
 
@@ -160,3 +147,74 @@ align-items: baseline;}
 text-align: center;
 }
 
+.translate-middle
+{transform: translate(-50%,100%)!important;
+}
+
+.contcart{
+  display: flex;
+  border-radius: 5px ;
+  border:1px solid #abacad;
+  padding: 10px;
+  max-width: 800px;
+  margin: auto;
+
+}
+.contxt 
+
+{ flex: 33.33%;  
+  padding: 10px;
+  
+}
+
+  .contxt
+  { min-width: 400px;
+ 
+  }
+
+  .conimage {
+    
+    
+    flex: 33.33%;
+    text-align: right;
+    
+    max-width: 180px;
+  max-height: 180px;
+  }
+
+ .conbtn {
+    display: block;
+    max-width: 100px;
+    max-height: 50px;
+    margin: auto;
+  }
+
+  .formu{display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    }
+
+.formulario{
+  display: flex; 
+  flex-direction: column;
+  
+
+}
+
+ .input-check{
+
+display:grid;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #dadada;
+  outline: none;
+  font-size: 16px;
+  user-select: text;}
+
+  .lab-check {
+  text-transform: capitalize;
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 500;}

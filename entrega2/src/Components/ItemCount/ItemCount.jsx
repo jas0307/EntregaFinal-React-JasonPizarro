@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+import Button from "react-bootstrap/esm/Button";
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const ItemCount = ({ initial, stock, onAdd }) => {
 	const [count, setCount] = useState(parseInt(initial));
@@ -16,21 +17,24 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 	}, [initial]);
 
 	return (
-		<div className="counter">
-			<button disabled={count <= 1} onClick={decrease} className="operacion">
+		
+			<ButtonGroup className="mb-2">
+			<span>{count}&nbsp;</span>
+			<Button variant="secondary" size="sm" disabled={count <= 1} onClick={decrease} className="operacion">
 				-
-			</button>
-			<span>{count}</span>
-			<button disabled={count >= stock} onClick={increase} className="operacion">
+			</Button>
+			
+			<Button variant="secondary" size="sm" disabled={count >= stock} onClick={increase} className="operacion">
 				+
-			</button>
+			</Button>
 			
 			<div>
-				<button disabled={stock <= 0} onClick={() => onAdd(count)} className="operacion">
+			&nbsp;<Button variant="secondary" size="sm" disabled={stock <= 0} onClick={() => onAdd(count)} className="operacion">
 					Agregar al carrito
-				</button>
+				</Button>
 			</div>
-		</div>
+			</ButtonGroup>
+		
 	);
 };
 

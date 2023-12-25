@@ -1,8 +1,12 @@
 import { useState } from "react"
 import { useCartContext } from "../Context/CartContext"
 import {getFirestore, collection, addDoc, updateDoc, doc, getDoc} from 'firebase/firestore';
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/esm/Button";
+
 
 export const CheckOut = () =>{
+
       const [nombre, setNombre] = useState('');
       const [apellido, setApellido] = useState('');
       const [telefono, setTelefono] = useState('');
@@ -12,8 +16,11 @@ export const CheckOut = () =>{
       const [ordenId, setOrdenId] = useState('');
       const [mensaje, setMensaje] = useState('');
 
+      const [isSubmitted, setIsSubmitted] = useState(false);
+      
+
      const {cart, totalPrice, removeProduct} = useCartContext();
-  
+
      const manejadorFormulario = (event) =>{
       event.preventDefault();
      
@@ -66,6 +73,7 @@ export const CheckOut = () =>{
        addDoc(collection(db, 'orders'), orden)
        .then((docRef)=>{
         setOrdenId(docRef.id);
+        setIsSubmitted(true);
         removeProduct();
        })
       .catch((error)=>{
@@ -87,9 +95,9 @@ export const CheckOut = () =>{
     
 };
   return(
-        <div>
+        <div className="formu">
           <h2> Complete el formulario para confirmar la compra </h2>
-           <form onSubmit={manejadorFormulario}>
+           <form className="formulario" onSubmit={manejadorFormulario}>
            
             {cart.map((producto)=>(
               <div key={producto.id}>
@@ -134,7 +142,11 @@ export const CheckOut = () =>{
             <p> ¡Gracias por tu compra ! Tu numero de seguimiento es: <br/> {''} {ordenId} {''} <br/></p>
           )}
            <div>
-            <button type="submit"> Enviar </button>
+           {isSubmitted ? (
+        <Link to="/"><button type="button">Volver al Home</button></Link>
+      ) : (
+        <Button type="submit">Enviar</Button>
+      )}
            </div>
           </form>
         </div>

@@ -5,25 +5,27 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import logoa from "../NavBar/logoA.png"
 import CartWidget from "../CartWidget/CartWidget"
+
 const NavBar = () => {
   return (
     <>
-    <Navbar bg="light" data-bs-theme="light">
+    
+    <Navbar bg="light" data-bs-theme="light" className="navb" >
         <Container>
         <Link to="/"> <div className="navbar-brand"> 
-            <div className='navbar-logo'><img  alt="logo" src={logoa} width="70px"  />{' '}</div>
-            <h3>A OTRA DIMENSION</h3>
+            <div className='navbar-logo'><img  alt="logo" src={logoa} width="70px"  />{'A OTRA DIMENSION'}</div>
+            
           </div></Link>
                     
-            <Nav className="mr-auto">
-            <div className="navbar2"> <Link  to="/">Home</Link></div>
-            <div className="navbar2"> <Link  to="category/impresoras3d">Impresoras3d</Link></div>
-            <div className="navbar2"> <Link  to="category/electronica">Electronica</Link></div>
-            <div className="navbar2"> <Link  to="category/accesorios">Accesorios</Link></div>
-            <div className="navbar2"> <Link  to="category/cnc">Cnc</Link></div>
-            <div className="navbar2"> <Link  to="/cart"><CartWidget/></Link></div>
-
+          <Nav className="col-md-auto-right">
+            <div className="navbar2"> <Link  to="/">HOME</Link></div>
+            <div className="navbar2"> <Link  to="category/impresoras3d">IMPRESORAS 3D</Link></div>
+            <div className="navbar2"> <Link  to="category/electronica">ELECTRONICA</Link></div>
+            <div className="navbar2"> <Link  to="category/accesorios">ACCESORIOS</Link></div>
+            <div className="navbar2"> <Link  to="category/cnc">CNC</Link></div>
+            
           </Nav>
+          <div className="navbar2"> <Link  to="/cart"><CartWidget/></Link></div>
         </Container>
       </Navbar>
       </>

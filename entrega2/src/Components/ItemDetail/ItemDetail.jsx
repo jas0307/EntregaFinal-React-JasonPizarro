@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 import { useCartContext } from '../Context/CartContext';
 import { Link } from 'react-router-dom';
-
+import Button from "react-bootstrap/esm/Button";
 const ItemDetail = ({item}) => {
 
   const[goToCart, setGoToCart] = useState(false);
@@ -13,6 +13,7 @@ const ItemDetail = ({item}) => {
    setGoToCart(true);
    addProduct(item, quantity);
   }
+
 
   return (
 <div className='detailcontainer'>
@@ -26,11 +27,13 @@ const ItemDetail = ({item}) => {
       <Card.Text>{item.description}
       </Card.Text>
       <h2>$ {item.price}</h2>
-      <h3>Stock: {item.stock}</h3>
+      
+      {item.stock === 0 ? <h3>Producto agotado</h3> : <h3>Stock: {item.stock}</h3>}
+      
     </Card.Body>    
     </div>
     <div className='counter'> 
-    {goToCart ? <Link to='/cart'>Terminar compra</Link> :<ItemCount stock={item.stock} initial={1} onAdd={onAdd} />}</div>
+    {goToCart ? <Link to='/cart'><Button variant="success" size="sm" ><h4>Terminar compra</h4></Button></Link> :<ItemCount stock={item.stock} initial={1} onAdd={onAdd} />}</div>
     </div>
     
   

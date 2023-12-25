@@ -1,4 +1,4 @@
-
+import Button from 'react-bootstrap/Button';
 
 import  cart2  from "./cart.png"
 
@@ -9,11 +9,11 @@ const CartWidget = () => {
   const {totalProducts, cart} = useCartContext();
   return (
     
-      <button>
+      <Button variant="light">
         
       <img src={cart2}  alt="cart" width="80px"/>
         <span className="position-absolute   translate-middle badge rounded-pill bg-danger">{totalProducts() ||cart}</span>
-      </button>
+      </Button>
    
   );
 };
