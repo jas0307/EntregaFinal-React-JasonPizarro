@@ -1,8 +1,5 @@
 import Button from 'react-bootstrap/Button';
-
 import  cart2  from "./cart.png"
-
-
 import {useCartContext} from '../Context/CartContext';
 
 const CartWidget = () => {

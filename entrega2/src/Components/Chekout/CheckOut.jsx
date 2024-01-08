@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useCartContext } from "../Context/CartContext"
 import {getFirestore, collection, addDoc, updateDoc, doc, getDoc} from 'firebase/firestore';
 import { Link } from "react-router-dom";
@@ -15,6 +15,30 @@ export const CheckOut = () =>{
       const [error, setError] = useState('');
       const [ordenId, setOrdenId] = useState('');
       const [mensaje, setMensaje] = useState('');
+      const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const updateDate = () => {
+      const now = new Date();
+      const day = now.getDate().toString().padStart(2, '0');
+      const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Los meses en JavaScript comienzan desde 0
+      const year = now.getFullYear();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+
+      const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
+      setCurrentDate(formattedDate);
+    };
+
+    // Actualizar la fecha cada minuto (o ajusta según necesidades)
+    const intervalId = setInterval(updateDate, 60000);
+
+    // Llamada inicial para mostrar la fecha inmediatamente
+    updateDate();
+
+    // Limpiar el intervalo al desmontar el componente
+    return () => clearInterval(intervalId);
+  }, []);
 
       const [isSubmitted, setIsSubmitted] = useState(false);
       
@@ -139,11 +163,13 @@ export const CheckOut = () =>{
 
           {error && <p>{error}</p>}
           {ordenId && (
-            <p> ¡Gracias por tu compra ! Tu numero de seguimiento es: <br/> {''} {ordenId} {''} <br/></p>
+            <p> ¡Gracias por tu compra ! 
+            con fecha {currentDate} <br></br>
+            Tu numero de seguimiento es: <br/> {''} {ordenId} {''} <br/></p>
           )}
            <div>
            {isSubmitted ? (
-        <Link to="/"><button type="button">Volver al Home</button></Link>
+        <Link to="/"><Button type="button">Volver al Home</Button></Link>
       ) : (
         <Button type="submit">Enviar</Button>
       )}
