@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import CartWidget from './Components/CartWidget/CartWidget'
+
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import NavBar from './Components/NavBar/NavBar'
 import { BrowserRouter,Routes, Route } from 'react-router-dom'
