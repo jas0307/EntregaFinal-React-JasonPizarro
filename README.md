@@ -1,3 +1,16 @@
+##Ecomerce- Impresion3d
+● NavBar
+● CartWidget
+● ItemListContainer
+● ItemList
+● ItemDetailContainer
+● ItemDetail
+○ ItemQuantitySelector
+○ Description
+○ AddItemButton
+● Checkout
+○ Brief (detalle de compra)
+
 ### Librerias instaladas/Installed Libraries:
 -Bootstrap\
 -ReactBootstrap\
